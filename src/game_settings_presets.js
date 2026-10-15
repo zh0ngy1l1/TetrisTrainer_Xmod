@@ -10,6 +10,7 @@ export const SITE_DEFAULTS = Object.freeze({
   DASSpeed: DASSpeed.STANDARD,
   DASBehavior: DASBehavior.STANDARD,
   DroughtModeEnabled: false,
+  XDroughtModeEnabled: false,
   DiggingHintsEnabled: false,
   GameSpeedMultiplier: 1,
   ParityHintsEnabled: false,

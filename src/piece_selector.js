@@ -77,13 +77,14 @@ PieceSelector.prototype.getStatusDisplay = function () {
 
 // Get the ID of a random piece, following the original RNG of NES tetris
 function getRandomPiece(previousPieceId) {
-  // Roll once 0-7, where 7 is a dummy value
+  // Roll once across all pieces plus a dummy value
   let r = Math.floor(Math.random() * (PIECE_LIST.length + 1));
   const tempPieceId = r !== PIECE_LIST.length ? PIECE_LIST[r][2] : "";
   if (
     r == PIECE_LIST.length || // Re-roll dummy value
     tempPieceId === previousPieceId || // Re-roll repeat piece
-    (GameSettings.shouldReduceLongBars() && tempPieceId == "I") // Re-roll I pieces when drought mode on
+    (GameSettings.shouldReduceLongBars() && tempPieceId == "I") || // Re-roll I pieces when drought mode on
+    (GameSettings.shouldReduceXPieces() && tempPieceId == "X") // Re-roll X pieces when X drought mode on
   ) {
     // Reroll once for repeats (or dummy) to reduce repeated pieces
     r = Math.floor(Math.random() * PIECE_LIST.length);

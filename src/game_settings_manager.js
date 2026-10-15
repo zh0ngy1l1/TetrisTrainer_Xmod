@@ -39,6 +39,10 @@ export function shouldReduceLongBars() {
   return Ui.getDroughtModeEnabled();
 }
 
+export function shouldReduceXPieces() {
+  return Ui.getXDroughtModeEnabled();
+}
+
 export function getPieceSequence() {
   return Ui.getPieceSequence();
 }

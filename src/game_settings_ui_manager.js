@@ -12,6 +12,7 @@ const dasBehaviorDropdown = document.getElementById("das-behavior-dropdown");
 const gameSpeedDropdown = document.getElementById("game-speed-dropdown");
 const startingBoardDropdown = document.getElementById("starting-board");
 const droughtCheckbox = document.getElementById("drought-checkbox");
+const xDroughtCheckbox = document.getElementById("x-drought-checkbox");
 // const diggingHintsCheckbox = document.getElementById("digging-hints-checkbox");
 // const parityHintsCheckbox = document.getElementById("parity-hints-checkbox");
 const transition10Checkbox = document.getElementById("transition-10-checkbox");
@@ -158,6 +159,9 @@ function setSetting(settingName, value) {
     case "DroughtModeEnabled":
       droughtCheckbox.checked = value;
       break;
+    case "XDroughtModeEnabled":
+      xDroughtCheckbox.checked = value;
+      break;
     // case "DiggingHintsEnabled":
     //   diggingHintsCheckbox.checked = value;
     //   break;
@@ -196,6 +200,10 @@ export function getTransition10Lines() {
 
 export function getDroughtModeEnabled() {
   return droughtCheckbox.checked;
+}
+
+export function getXDroughtModeEnabled() {
+  return xDroughtCheckbox.checked;
 }
 
 export function getDiggingHintsEnabled() {
@@ -245,6 +253,7 @@ export function loadPreset(presetObj) {
     ["DASSpeed", dasSpeedDropdown],
     ["DASBehavior", dasBehaviorDropdown],
     ["DroughtModeEnabled", droughtCheckbox],
+    ["XDroughtModeEnabled", xDroughtCheckbox],
     // ["DiggingHintsEnabled", diggingHintsCheckbox],
     ["GameSpeedMultiplier", gameSpeedDropdown],
     // ["ParityHintsEnabled", parityHintsCheckbox],
