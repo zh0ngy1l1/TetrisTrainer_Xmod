@@ -129,6 +129,15 @@ const PIECE_Z = [
   ],
 ];
 
+const PIECE_X = [
+  [
+    [0, 0, 0, 0],
+    [0, 0, 1, 0],
+    [0, 1, 0, 1],
+    [0, 0, 1, 0],
+  ],
+];
+
 // The piece list, with colors and letter identifiers
 
 // [Definition, Color Set, Corresponding Letter]
@@ -140,6 +149,7 @@ export const PIECE_LOOKUP = {
   L: [PIECE_L, 2, "L"],
   I: [PIECE_I, 1, "I"],
   J: [PIECE_J, 3, "J"],
+  X: [PIECE_X, 4, "X"],
 };
 
 export const PIECE_LIST = Object.values(PIECE_LOOKUP);

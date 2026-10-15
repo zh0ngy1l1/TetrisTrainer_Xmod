@@ -47,7 +47,7 @@ export function getBoardAfterLineClears(board) {
   let fullRows = 0;
   let boardAfterStr = "";
   for (const row of board) {
-    const joinedRow = row.slice(0, 10).join("").replace(/2|3/g, "1");
+    const joinedRow = row.slice(0, 10).join("").replace(/[234]/g, "1");
     if (joinedRow === "1111111111") {
       fullRows++;
     } else {

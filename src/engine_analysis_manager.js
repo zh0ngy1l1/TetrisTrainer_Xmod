@@ -114,7 +114,7 @@ EngineAnalysisManager.prototype.snapshotBoard = function () {
   this.boardSnapshotStr = this.board
     .map((row) => row.slice(0, 10).join(""))
     .join("")
-    .replace(/2|3/g, "1");
+    .replace(/[234]/g, "1");
 };
 
 // Handle receiving a message from the WASM worker
@@ -237,7 +237,7 @@ EngineAnalysisManager.prototype.makeRequest = async function (isRateRequest) {
   if (isRateRequest) {
     let fullRows = 0;
     for (const row of this.board) {
-      const joinedRow = row.slice(0, 10).join("").replace(/2|3/g, "1");
+      const joinedRow = row.slice(0, 10).join("").replace(/[234]/g, "1");
       if (joinedRow == "1111111111") {
         fullRows++;
       } else {
@@ -255,7 +255,7 @@ EngineAnalysisManager.prototype.makeRequest = async function (isRateRequest) {
   const encodedBoard = this.board
     .map((row) => row.slice(0, 10).join(""))
     .join("")
-    .replace(/2|3/g, "1");
+    .replace(/[234]/g, "1");
   let boardStr = isRateRequest ? this.boardSnapshotStr : encodedBoard;
 
   const curPiece = curPieceSelect.value;

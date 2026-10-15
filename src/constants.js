@@ -15,7 +15,7 @@ export const RED_COLOR = "red";
 export const BLUE_COLOR = "#2105f2";
 export const WHITE_COLOR = "white";
 
-// 0 is empty space, 1 is T piece color, 2 is L piece color, 3 is J piece color
+// 0 is empty space, 1 is T piece color, 2 is L piece color, 3 is J piece color, 4 is X piece color
 // -1 marks a cell the preview overlay leaves untouched (transparent). It is
 // only valid in ephemeral preview boards, never in the live game board or
 // anything serialized to the engine.
@@ -24,6 +24,7 @@ export const SquareState = {
   COLOR1: 1,
   COLOR2: 2,
   COLOR3: 3,
+  COLOR4: 4,
   TRANSPARENT: -1,
 };
 
@@ -57,10 +58,25 @@ export const COLOR_2 = {
 // It is the same as COLOR_1, but fills the whole square
 export const COLOR_3 = Object.assign(COLOR_1);
 
+// X stays bright yellow at every level, distinct from the other palettes.
+export const COLOR_4 = {
+  0: "#ffff00",
+  1: "#ffff00",
+  2: "#ffff00",
+  3: "#ffff00",
+  4: "#ffff00",
+  5: "#ffff00",
+  6: "#ffff00",
+  7: "#ffff00",
+  8: "#ffff00",
+  9: "#ffff00",
+};
+
 export const COLOR_PALETTE = {
   1: COLOR_1,
   2: COLOR_2,
   3: COLOR_3,
+  4: COLOR_4,
 };
 
 export const Direction = Object.freeze({
